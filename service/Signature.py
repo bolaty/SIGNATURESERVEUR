@@ -295,11 +295,12 @@ def traitement_asynchrone(connection, clsAgence, resultatUsers):
                     
                 return Objet
         corpsMessagesms = 'votre code de signature est :' + resultatUsers["SG_TOKENSIGNATURE"]
-        reponse = excecuteServiceWebNew(resultatUsers, "post", LIENDAPISMS,corpsMessagesms)
-            
-        if reponse or len(reponse) == 0:
-            
-            pass
+        if resultatUsers.get('CL_TELEPHONE') and resultatUsers['CL_TELEPHONE'].strip():
+            reponse = excecuteServiceWebNew(resultatUsers, "post", LIENDAPISMS,corpsMessagesms)
+                
+            if reponse or len(reponse) == 0:
+                
+                pass
 
     except Exception as e:
         #connection.close() 

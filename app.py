@@ -76,6 +76,7 @@ def handle_signature(data):
     signature_info = {
         'AG_CODEAGENCE': str(data.get('AG_CODEAGENCE', '')),
         'SIGNATURE': str(data.get('SIGNATURE', '')),
+        'PHOTO': str(data.get('PHOTO', '')),
         'SG_CODESIGNATURE': str(data.get('SG_CODESIGNATURE', '')),
         'OP_CODEOPERATEUR': str(data.get('OP_CODEOPERATEUR', '')),
         'CL_IDCLIENT': str(data.get('CL_IDCLIENT', '')),
